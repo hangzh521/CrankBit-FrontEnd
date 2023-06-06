@@ -1,2 +1,1 @@
 # Allgood-Frontend
-hello world
