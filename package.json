@@ -89,13 +89,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,css,json,md}": [
-      "git add ."
-    ],
-    "*.{js,jsx,ts,tsx}": [
-      "pre-commit",
-      "git add ."
-    ]
+    "*.{js,jsx,ts,tsx,css,json,md}": []
   },
   "browserslist": {
     "production": [
