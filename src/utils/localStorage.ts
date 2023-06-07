@@ -1,4 +1,4 @@
-import { User } from "../features/auth/authSlice";
+import { User } from "../interfaces/auth";
 
 export const addUserToLocalStorage = (user: User) => {
   localStorage.setItem("user", JSON.stringify(user));

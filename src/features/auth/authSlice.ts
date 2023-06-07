@@ -1,44 +1,19 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { RootState } from "../../app/store";
+import { AxiosError } from "axios";
+import { loginApi, registerApi } from "../../services/user";
 import {
   getUserFromLocalStorage,
   addUserToLocalStorage,
   removeUserFromLocalStorage,
 } from "../../utils/localStorage";
-import { axiosClient } from "../../utils/axios";
-import { AxiosError } from "axios";
-import type { RootState } from "../../app/store";
-
-export interface KnownError {
-  msg: string;
-}
-
-export interface User {
-  user: {
-    userId: string;
-    name: string;
-    email: string;
-  };
-  token: string;
-  refreshToken?: string;
-  error?: KnownError;
-}
-
-export interface RegisterPayload {
-  name: string;
-  email: string;
-  password: string;
-}
-
-export interface LoginPayload {
-  email: string;
-  password: string;
-}
-
-export interface AuthState {
-  isLoading: boolean;
-  user: User | null;
-  isError: boolean;
-}
+import {
+  KnownError,
+  User,
+  RegisterPayload,
+  LoginPayload,
+  AuthState,
+} from "../../interfaces/auth";
 
 const initialState: AuthState = {
   isLoading: false,
@@ -54,7 +29,7 @@ export const registerUser = createAsyncThunk<
   "auth/signup",
   async (registerPayload: RegisterPayload, { rejectWithValue }) => {
     try {
-      const response = await axiosClient.post("/auth/register", registerPayload);
+      const response = await registerApi(registerPayload);
       const { data } = response;
       addUserToLocalStorage(data);
       return data;
@@ -73,7 +48,7 @@ export const loginUser = createAsyncThunk<
   { rejectValue: KnownError }
 >("auth/login", async (loginPayload: LoginPayload, { rejectWithValue }) => {
   try {
-    const response = await axiosClient.post("/auth/login", loginPayload);
+    const response = await loginApi(loginPayload);
     const { data } = response;
     addUserToLocalStorage(data);
     return data;

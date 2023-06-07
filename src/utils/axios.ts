@@ -3,7 +3,7 @@ import { getUserFromLocalStorage } from "./localStorage";
 
 // NOTE: Please use your own server port number, and will change to production server later
 export const axiosClient = axios.create({
-  baseURL: "http://localhost:8000/api/v1",
+  baseURL: process.env.REACT_APP_BACKEND_BASE_URL,
 });
 
 axiosClient.interceptors.request.use((config) => {
