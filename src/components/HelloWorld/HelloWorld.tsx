@@ -4,25 +4,13 @@
  */
 
 // External imports
-<<<<<<< HEAD:src/components/HelloWorld/index.tsx
-import Alert from "@mui/material/Alert";
-import AlertTitle from "@mui/material/AlertTitle";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import { AlertProps, BoxProps } from "@mui/material";
-import { useAppDispatch } from "../../app/hooks";
-import { logoutUser } from "../../features/auth/authSlice";
-||||||| 93c2e58:src/components/HelloWorld/index.tsx
-import Alert from "@mui/material/Alert";
-import AlertTitle from "@mui/material/AlertTitle";
-import Box from "@mui/material/Box";
-import { AlertProps, BoxProps } from "@mui/material";
-=======
 import Alert from '@mui/material/Alert'
 import AlertTitle from '@mui/material/AlertTitle'
 import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
 import { AlertProps, BoxProps } from '@mui/material'
->>>>>>> 8161377c584a28704c25f9ccf8c5ba699fa4a5bf:src/components/HelloWorld/HelloWorld.tsx
+import { useAppDispatch } from '../../app/hooks'
+import { logoutUser } from '../../features/auth/authSlice'
 
 // Local imports
 // import styles from "./index.module.scss";
