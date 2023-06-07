@@ -33,8 +33,12 @@ export const registerUser = createAsyncThunk<
       const { data } = response;
       addUserToLocalStorage(data);
       return data;
-    } catch (err) {
-      const error: AxiosError<KnownError> = err as any;
+    } catch (err: unknown) {
+      if (!(err instanceof AxiosError)) {
+        throw err;
+      }
+
+      const error: AxiosError<KnownError> = err;
       if (!error.response) {
         throw err;
       }
@@ -52,8 +56,12 @@ export const loginUser = createAsyncThunk<
     const { data } = response;
     addUserToLocalStorage(data);
     return data;
-  } catch (err) {
-    const error: AxiosError<KnownError> = err as any;
+  } catch (err: unknown) {
+    if (!(err instanceof AxiosError)) {
+      throw err;
+    }
+
+    const error: AxiosError<KnownError> = err;
     if (!error.response) {
       throw err;
     }
