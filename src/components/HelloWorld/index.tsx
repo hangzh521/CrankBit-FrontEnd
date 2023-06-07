@@ -7,7 +7,10 @@
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import { AlertProps, BoxProps } from "@mui/material";
+import { useAppDispatch } from "../../app/hooks";
+import { logoutUser } from "../../features/auth/authSlice";
 
 // Local imports
 // import styles from "./index.module.scss";
@@ -33,11 +36,18 @@ function HelloWorld({ alert, box, text }: HelloWorldProps) {
   const boxProps = { ...defaults.box, ...box } as BoxProps;
   const alertProps = { ...defaults.alert, ...alert } as AlertProps;
 
+  const dispatch = useAppDispatch();
+
+  const handleLogout = () => {
+    dispatch(logoutUser());
+  };
+
   return (
     <Box {...boxProps}>
       <Alert {...alertProps}>
         <AlertTitle>{text}</AlertTitle>
       </Alert>
+      <Button onClick={handleLogout}>Logout</Button>
     </Box>
   );
 }
