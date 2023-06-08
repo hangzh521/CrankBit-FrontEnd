@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-14/static/css/main.eb7c9ff9.css",
-    "main.js": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-14/static/js/main.59d3a136.js",
+    "main.css": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-14/static/css/main.cd64932f.css",
+    "main.js": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-14/static/js/main.3ce7e811.js",
     "static/js/496.6c15989f.chunk.js": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-14/static/js/496.6c15989f.chunk.js",
     "static/media/roboto-latin-500-normal.woff2": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-14/static/media/roboto-latin-500-normal.f25d774ecfe0996f8eb5.woff2",
     "static/media/roboto-latin-700-normal.woff2": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-14/static/media/roboto-latin-700-normal.227c93190fe7f82de3f8.woff2",
@@ -60,12 +60,12 @@
     "static/media/roboto-greek-ext-400-normal.woff": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-14/static/media/roboto-greek-ext-400-normal.f708607d2a7290fb8bfa.woff",
     "static/media/roboto-greek-ext-700-normal.woff": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-14/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-14/index.html",
-    "main.eb7c9ff9.css.map": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-14/static/css/main.eb7c9ff9.css.map",
-    "main.59d3a136.js.map": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-14/static/js/main.59d3a136.js.map",
+    "main.cd64932f.css.map": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-14/static/css/main.cd64932f.css.map",
+    "main.3ce7e811.js.map": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-14/static/js/main.3ce7e811.js.map",
     "496.6c15989f.chunk.js.map": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-14/static/js/496.6c15989f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.eb7c9ff9.css",
-    "static/js/main.59d3a136.js"
+    "static/css/main.cd64932f.css",
+    "static/js/main.3ce7e811.js"
   ]
 }
