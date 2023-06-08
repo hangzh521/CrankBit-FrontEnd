@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-11/static/css/main.5997e448.css",
-    "main.js": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-11/static/js/main.4d97e27e.js",
+    "main.js": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-11/static/js/main.773770c6.js",
     "static/js/496.6c15989f.chunk.js": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-11/static/js/496.6c15989f.chunk.js",
     "static/media/roboto-latin-500-normal.woff2": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-11/static/media/roboto-latin-500-normal.f25d774ecfe0996f8eb5.woff2",
     "static/media/roboto-latin-700-normal.woff2": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-11/static/media/roboto-latin-700-normal.227c93190fe7f82de3f8.woff2",
@@ -61,11 +61,11 @@
     "static/media/roboto-greek-ext-700-normal.woff": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-11/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-11/index.html",
     "main.5997e448.css.map": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-11/static/css/main.5997e448.css.map",
-    "main.4d97e27e.js.map": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-11/static/js/main.4d97e27e.js.map",
+    "main.773770c6.js.map": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-11/static/js/main.773770c6.js.map",
     "496.6c15989f.chunk.js.map": "https://CRANKBIT.github.io/CrankBit-FrontEnd/pr-preview/pr-11/static/js/496.6c15989f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5997e448.css",
-    "static/js/main.4d97e27e.js"
+    "static/js/main.773770c6.js"
   ]
 }
