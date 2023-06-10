@@ -35,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_SignUp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/pages/SignUp */ "./src/pages/SignUp/index.ts");
 /* harmony import */ var _pages_Login__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/pages/Login */ "./src/pages/Login/index.ts");
 /* harmony import */ var _routes_PrivateRoute__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/routes/PrivateRoute */ "./src/routes/PrivateRoute/index.ts");
-/* harmony import */ var _pages_MyAccount_MyAccount__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/pages/MyAccount/MyAccount */ "./src/pages/MyAccount/MyAccount.tsx");
+/* harmony import */ var _pages_MyAccount__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/pages/MyAccount */ "./src/pages/MyAccount/index.ts");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -58,7 +58,7 @@ var router = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.createHashRouter)(
   path: '/account',
   element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_routes_PrivateRoute__WEBPACK_IMPORTED_MODULE_3__["default"], {
     isLoggedIn: isLoggedIn,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_pages_MyAccount_MyAccount__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_pages_MyAccount__WEBPACK_IMPORTED_MODULE_4__["default"], {})
   })
 }]);
 var App = function App() {
@@ -715,6 +715,22 @@ var MyAccount = function MyAccount() {
   });
 };
 /* harmony default export */ __webpack_exports__["default"] = (MyAccount);
+
+/***/ }),
+
+/***/ "./src/pages/MyAccount/index.ts":
+/*!**************************************!*\
+  !*** ./src/pages/MyAccount/index.ts ***!
+  \**************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* reexport safe */ _MyAccount__WEBPACK_IMPORTED_MODULE_0__["default"]; }
+/* harmony export */ });
+/* harmony import */ var _MyAccount__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MyAccount */ "./src/pages/MyAccount/MyAccount.tsx");
+
 
 /***/ }),
 
