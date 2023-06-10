@@ -621,44 +621,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   loginApi: function() { return /* binding */ loginApi; },
 /* harmony export */   registerApi: function() { return /* binding */ registerApi; }
 /* harmony export */ });
-/* harmony import */ var _home_runner_work_CrankBit_FrontEnd_CrankBit_FrontEnd_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js */ "./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js");
-/* harmony import */ var _home_runner_work_CrankBit_FrontEnd_CrankBit_FrontEnd_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var _utils_axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/utils/axios */ "./src/utils/axios.ts");
+/* harmony import */ var _utils_axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/utils/axios */ "./src/utils/axios.ts");
 
-
-
-var registerApi = /*#__PURE__*/function () {
-  var _ref = (0,_home_runner_work_CrankBit_FrontEnd_CrankBit_FrontEnd_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/(0,_home_runner_work_CrankBit_FrontEnd_CrankBit_FrontEnd_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee(registerPayload) {
-    return (0,_home_runner_work_CrankBit_FrontEnd_CrankBit_FrontEnd_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee$(_context) {
-      while (1) switch (_context.prev = _context.next) {
-        case 0:
-          return _context.abrupt("return", _utils_axios__WEBPACK_IMPORTED_MODULE_2__["default"].post('/auth/register', registerPayload));
-        case 1:
-        case "end":
-          return _context.stop();
-      }
-    }, _callee);
-  }));
-  return function registerApi(_x) {
-    return _ref.apply(this, arguments);
-  };
-}();
-var loginApi = /*#__PURE__*/function () {
-  var _ref2 = (0,_home_runner_work_CrankBit_FrontEnd_CrankBit_FrontEnd_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/(0,_home_runner_work_CrankBit_FrontEnd_CrankBit_FrontEnd_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee2(loginPayload) {
-    return (0,_home_runner_work_CrankBit_FrontEnd_CrankBit_FrontEnd_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee2$(_context2) {
-      while (1) switch (_context2.prev = _context2.next) {
-        case 0:
-          return _context2.abrupt("return", _utils_axios__WEBPACK_IMPORTED_MODULE_2__["default"].post('/auth/login', loginPayload));
-        case 1:
-        case "end":
-          return _context2.stop();
-      }
-    }, _callee2);
-  }));
-  return function loginApi(_x2) {
-    return _ref2.apply(this, arguments);
-  };
-}();
+var registerApi = function registerApi(registerPayload) {
+  return _utils_axios__WEBPACK_IMPORTED_MODULE_0__["default"].post('/auth/register', registerPayload);
+};
+var loginApi = function loginApi(loginPayload) {
+  return _utils_axios__WEBPACK_IMPORTED_MODULE_0__["default"].post('/auth/login', loginPayload);
+};
 
 /***/ }),
 
