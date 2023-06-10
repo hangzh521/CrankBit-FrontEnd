@@ -652,6 +652,7 @@ var axiosClient = axios__WEBPACK_IMPORTED_MODULE_1__["default"].create({
 axiosClient.interceptors.request.use(function (config) {
   var user = (0,_localStorage__WEBPACK_IMPORTED_MODULE_0__.getUserFromLocalStorage)();
   if (user) {
+    // eslint-disable-next-line no-param-reassign
     config.headers.common.Authorization = "Bearer ".concat(user.token);
   }
   return config;
