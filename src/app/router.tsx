@@ -17,8 +17,8 @@ const router = createHashRouter([
     element: <Login />,
   },
   {
-    path: '/Getstarted',
-    element: <Getstarted/>
+    path: '/getstarted',
+    element: <Getstarted />
   }
   
 ])
