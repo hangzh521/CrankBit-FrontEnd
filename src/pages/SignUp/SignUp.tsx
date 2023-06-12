@@ -30,6 +30,7 @@ const SignUp = () => {
   return (
     <div>
       <button onClick={handleRegister}>Register</button>
+      
     </div>
   )
 }

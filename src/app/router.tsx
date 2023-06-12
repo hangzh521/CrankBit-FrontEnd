@@ -2,7 +2,7 @@ import { createHashRouter, RouterProvider } from 'react-router-dom'
 import Home from '@/pages/Home'
 import SignUp from '@/pages/SignUp'
 import Login from '@/pages/Login'
-
+import Getstarted from '@/pages/Getstarted/Getstarted'
 const router = createHashRouter([
   {
     path: '/',
@@ -16,6 +16,11 @@ const router = createHashRouter([
     path: '/auth/login',
     element: <Login />,
   },
+  {
+    path: '/Getstarted',
+    element: <Getstarted/>
+  }
+  
 ])
 
 const App = () => {
