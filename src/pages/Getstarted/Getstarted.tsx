@@ -1,10 +1,11 @@
 import React from 'react'
 import Logo from "./logo192.png"
 
-const Getstarted = () => {
+const  Getstarted = () => {
   return (
+    
     <div className='flex'>
-      <div className="w-1/2 bg-[#03111B] h-screen flex justify-center items-center">     
+      <div className="w-1/2 bg-background h-screen flex justify-center items-center">     
         <img src={Logo} className='w-32 h-32'/>     
       </div>
       <div className="w-1/2 bg-white h-screen flex justify-center items-center">
