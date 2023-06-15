@@ -1,13 +1,7 @@
 import { FC } from 'react'
 import PlanCard from './components/PlanCard/PlanCard'
 
-const StarterList = [
-  '5 reports',
-  'Simple Form Builder',
-  'Embed Option',
-  'Sharable Link',
-  'Email Support',
-]
+const StarterList = ['5 reports', 'Simple Form Builder', 'Embed Option', 'Sharable Link', 'Email Support']
 const PremiumList = [
   'Unlimited Reports',
   'Everything from FREE plan',

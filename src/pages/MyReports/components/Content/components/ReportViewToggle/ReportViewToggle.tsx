@@ -21,16 +21,8 @@ const ReportViewToggle: FC = () => {
         )}
 
         <div className="w-1/6 cursor-pointer text-end text-3xl">
-          <ToggleButton
-            icon={AiOutlineAppstore}
-            isActive={viewMode === 'card'}
-            onClick={() => SetViewMode('card')}
-          />
-          <ToggleButton
-            icon={AiOutlineMenu}
-            isActive={viewMode === 'list'}
-            onClick={() => SetViewMode('list')}
-          />
+          <ToggleButton icon={AiOutlineAppstore} isActive={viewMode === 'card'} onClick={() => SetViewMode('card')} />
+          <ToggleButton icon={AiOutlineMenu} isActive={viewMode === 'list'} onClick={() => SetViewMode('list')} />
         </div>
       </div>
       {viewMode === 'list' ? <ListView /> : <CardView />}

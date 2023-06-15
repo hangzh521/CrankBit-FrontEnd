@@ -37,12 +37,10 @@ const Home: FC = () => {
             <Link to="/my-reports" className="font-bold">
               My-report
             </Link>
-            or
-            {' '}
+            or{' '}
             <Link to="/Report_1" className="font-bold">
               report
-            </Link>
-            {' '}
+            </Link>{' '}
             <Link to="/usr/profile" className="font-bold">
               profile
             </Link>
