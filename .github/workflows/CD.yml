@@ -22,7 +22,7 @@ jobs:
           node-version: '18'
       - name: Install and Build
         run: |
-          yarn set version stable
+          yarn set version 3.6.0
           yarn
           yarn build
       - name: Deploy
