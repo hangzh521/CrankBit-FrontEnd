@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "https://CRANKBIT.github.io/CrankBit-FrontEnd/main/static/css/main.41b9b673.css",
-    "main.js": "https://CRANKBIT.github.io/CrankBit-FrontEnd/main/static/js/main.7f9e6cad.js",
+    "main.css": "https://CRANKBIT.github.io/CrankBit-FrontEnd/main/static/css/main.cd27e0db.css",
+    "main.js": "https://CRANKBIT.github.io/CrankBit-FrontEnd/main/static/js/main.84cebf50.js",
     "static/js/496.f78701ae.chunk.js": "https://CRANKBIT.github.io/CrankBit-FrontEnd/main/static/js/496.f78701ae.chunk.js",
     "static/media/roboto-latin-500-normal.woff2": "https://CRANKBIT.github.io/CrankBit-FrontEnd/main/static/media/roboto-latin-500-normal.f25d774ecfe0996f8eb5.woff2",
     "static/media/roboto-latin-700-normal.woff2": "https://CRANKBIT.github.io/CrankBit-FrontEnd/main/static/media/roboto-latin-700-normal.227c93190fe7f82de3f8.woff2",
@@ -61,12 +61,12 @@
     "static/media/roboto-greek-ext-700-normal.woff": "https://CRANKBIT.github.io/CrankBit-FrontEnd/main/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "https://CRANKBIT.github.io/CrankBit-FrontEnd/main/index.html",
     "static/media/file.svg": "https://CRANKBIT.github.io/CrankBit-FrontEnd/main/static/media/file.74496e0962a59ef5d9b1bd5cd72372e1.svg",
-    "main.41b9b673.css.map": "https://CRANKBIT.github.io/CrankBit-FrontEnd/main/static/css/main.41b9b673.css.map",
-    "main.7f9e6cad.js.map": "https://CRANKBIT.github.io/CrankBit-FrontEnd/main/static/js/main.7f9e6cad.js.map",
+    "main.cd27e0db.css.map": "https://CRANKBIT.github.io/CrankBit-FrontEnd/main/static/css/main.cd27e0db.css.map",
+    "main.84cebf50.js.map": "https://CRANKBIT.github.io/CrankBit-FrontEnd/main/static/js/main.84cebf50.js.map",
     "496.f78701ae.chunk.js.map": "https://CRANKBIT.github.io/CrankBit-FrontEnd/main/static/js/496.f78701ae.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.41b9b673.css",
-    "static/js/main.7f9e6cad.js"
+    "static/css/main.cd27e0db.css",
+    "static/js/main.84cebf50.js"
   ]
 }
