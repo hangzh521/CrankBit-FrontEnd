@@ -4,15 +4,26 @@ import classNames from 'classnames'
 export enum Variant {
   Default,
   Primary,
+  PrimaryFont,
+  PrimaryOutline,
 }
 
 export interface Props extends HTMLProps<HTMLButtonElement> {
   children: ReactNode
   variant?: Variant
   type?: 'button' | 'submit' | 'reset' | undefined
+  block?: boolean
+  DefaultAuthButtonStyle?: boolean
 }
 
-const Button: FC<Props> = ({ children, className, variant = Variant.Default, type = 'button' }) => (
+const Button: FC<Props> = ({
+  children,
+  className,
+  variant = Variant.Default,
+  type = 'button',
+  block = false,
+  ...props
+}) => (
   <button
     // eslint-disable-next-line react/button-has-type
     type={type}
@@ -24,15 +35,16 @@ const Button: FC<Props> = ({ children, className, variant = Variant.Default, typ
       'px-4',
       'py-1',
       variant === Variant.Default && ['bg-background', 'text-white'],
-      variant === Variant.Primary && ['bg-background', 'text-primary'],
+      variant === Variant.Primary && ['bg-primary', 'text-white'],
+      variant === Variant.PrimaryFont && ['bg-background', 'text-primary'],
+      variant === Variant.PrimaryOutline && ['bg-white', 'text-primary', 'border', 'border-primary'],
+      block && ['block', 'w-full'],
       className
     )}
+    {...props}
   >
     {children}
   </button>
 )
 
 export default Button
-
-// const buttonClassNames =
-//   'w-[250px] h-[90px] bg-[#03111B] hover:bg-[#007AD3] text-white rounded-md'

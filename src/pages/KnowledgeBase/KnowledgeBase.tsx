@@ -1,13 +1,13 @@
 import { FC } from 'react'
-import SideNav from '@/components/SideNav'
-import Content from './components/Content/Content'
-import Container from '@/layouts/Container/Container'
+import SideNavigationBar from '@/components/SideNavigationBar'
+import Content from './components/Content'
+import Container from '@/layouts/Container'
 
 const KnowledgeBase: FC = () => (
   <div>
     <Container>
-      <div className="flex text-xl min-h-[832px]]">
-        <SideNav />
+      <div className="flex text-xl min-h-[832px] h-screen">
+        <SideNavigationBar />
         <Content />
       </div>
     </Container>

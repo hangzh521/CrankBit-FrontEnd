@@ -5,7 +5,7 @@ interface Props {
 }
 
 const PageContent: FC<Props> = ({ children }) => (
-  <div className="bg-[#E9EFF4] w-full max-w-[975px] flex justify-center pt-[55px]">
+  <div className="w-full flex justify-center pt-[55px] px-[80px]">
     <div>
       <div>{children}</div>
     </div>

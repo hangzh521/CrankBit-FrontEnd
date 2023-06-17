@@ -1,16 +1,13 @@
 import { FC } from 'react'
-import SideNav from '@/components/SideNav/SideNav'
-import Container from '@/layouts/Container/Container'
-import PageContent from '@/components/PageContent/PageContent'
-import Content from './components/Content/Content'
+import SideNavigationBar from '@/components/SideNavigationBar'
+import Container from '@/layouts/Container'
+import Content from './components/Content'
 
 const MyReports: FC = () => (
   <Container>
-    <div className="flex text-xl min-h-[832px]">
-      <SideNav />
-      <PageContent>
-        <Content />
-      </PageContent>
+    <div className="flex text-xl min-h-[832px] h-screen">
+      <SideNavigationBar />
+      <Content />
     </div>
   </Container>
 )

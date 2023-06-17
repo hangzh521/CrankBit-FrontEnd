@@ -14,7 +14,8 @@
     "plugin:jest/recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:import/typescript"
+    "plugin:import/typescript",
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -25,7 +26,7 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["jest", "react", "react-hooks", "@typescript-eslint", "import"],
+  "plugins": ["jest", "react", "react-hooks", "@typescript-eslint", "import", "prettier"],
   "overrides": [
     {
       "files": ["src/features/**/*Slice.ts"],
@@ -76,7 +77,6 @@
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-unnecessary-condition": "error",
     "@typescript-eslint/prefer-optional-chain": "error",
-    "@typescript-eslint/semi": "off",
     "@typescript-eslint/comma-dangle": "off",
     "jsx-a11y/alt-text": "off",
     "max-len": [
@@ -97,7 +97,6 @@
     "no-plusplus": "off",
     "no-shadow": "off",
     "no-undef": "off",
-    "quotes": "off",
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
     "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
