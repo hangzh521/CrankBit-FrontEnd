@@ -30,9 +30,7 @@ const Content: FC = () => {
           </div>
         </div>
       </div>
-      <div>
-        <ListView />
-      </div>
+      <div>{viewMode === 'list' ? <ListView /> : <CardView />}</div>
     </div>
   )
 }
