@@ -22,7 +22,7 @@ const ListItems = [
   {
     id: uuidv4(),
     item: 'Help & Support',
-    url: '',
+    url: '/help-support',
   },
 ]
 

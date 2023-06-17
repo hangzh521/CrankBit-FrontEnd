@@ -14,6 +14,7 @@ import LoginForCompany from '@/pages/Login/components/LoginForCompany/LoginForCo
 import CreateAccount from '@/pages/CreateAccount/CreateAccount'
 import ReportsHistory from '@/pages/MyReports/components/ReportsHistory'
 
+
 const isLoggedIn = true
 
 const router = createHashRouter([
