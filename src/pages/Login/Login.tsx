@@ -2,6 +2,8 @@ import { FC, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { loginUser } from '@/features/auth/authSlice'
 import { useAppDispatch, useAppSelector } from '@/app/hooks'
+import AuthButton from '../AuthButton/AuthButton'
+import { Variant } from '@/components/Button'
 
 const Login: FC = () => {
   const { user } = useAppSelector((state) => state.auth)
@@ -29,9 +31,7 @@ const Login: FC = () => {
   return (
     <div>
       <Link to="/auth/login">
-        <button type="button" onClick={handleLogin} className="text-white">
-          Login
-        </button>
+        <AuthButton variant={Variant.PrimaryOutline}>Login</AuthButton>
       </Link>
     </div>
   )
