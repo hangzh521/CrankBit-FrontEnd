@@ -18,11 +18,12 @@
     "pre-commit": "npx --no-install lint-staged"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.0",
+    "@emotion/react": "11.11.0",
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.2",
+    "@mui/base": "^5.0.0-beta.4",
     "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.13.3",
+    "@mui/material": "5.13.3",
     "@mui/styled-engine-sc": "^5.12.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/react-icons": "^3.0.0",
