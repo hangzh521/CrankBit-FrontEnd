@@ -1935,9 +1935,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/react@npm:^11.11.0":
-  version: 11.11.1
-  resolution: "@emotion/react@npm:11.11.1"
+"@emotion/react@npm:11.11.0":
+  version: 11.11.0
+  resolution: "@emotion/react@npm:11.11.0"
   dependencies:
     "@babel/runtime": ^7.18.3
     "@emotion/babel-plugin": ^11.11.0
@@ -1952,7 +1952,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: aec3c36650f5f0d3d4445ff44d73dd88712b1609645b6af3e6d08049cfbc51f1785fe13dea1a1d4ab1b0800d68f2339ab11e459687180362b1ef98863155aae5
+  checksum: 2653e7c3de7b6fd5b0e18dea15621a9886104cc7c8cd5522ca69e52bd547ef6f13644193f8e0a906eea1e29a4f1d8167cdfa4667572fb7fafe0c62ab30fbaab6
   languageName: node
   linkType: hard
 
@@ -2513,7 +2513,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/base@npm:5.0.0-beta.4":
+"@mui/base@npm:5.0.0-beta.3":
+  version: 5.0.0-beta.3
+  resolution: "@mui/base@npm:5.0.0-beta.3"
+  dependencies:
+    "@babel/runtime": ^7.21.0
+    "@emotion/is-prop-valid": ^1.2.1
+    "@mui/types": ^7.2.4
+    "@mui/utils": ^5.13.1
+    "@popperjs/core": ^2.11.7
+    clsx: ^1.2.1
+    prop-types: ^15.8.1
+    react-is: ^18.2.0
+  peerDependencies:
+    "@types/react": ^17.0.0 || ^18.0.0
+    react: ^17.0.0 || ^18.0.0
+    react-dom: ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: f4801ea809f4c6a18046006ebc6b2e7c371a84f23f2468bb7db6d37d67a5c5e638e231b8c54f438d40f2de85fda76ca47ea73f2f20b24f80a1588a54ab9511d1
+  languageName: node
+  linkType: hard
+
+"@mui/base@npm:^5.0.0-beta.4":
   version: 5.0.0-beta.4
   resolution: "@mui/base@npm:5.0.0-beta.4"
   dependencies:
@@ -2536,7 +2559,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/core-downloads-tracker@npm:^5.13.4":
+"@mui/core-downloads-tracker@npm:^5.13.3":
   version: 5.13.4
   resolution: "@mui/core-downloads-tracker@npm:5.13.4"
   checksum: 2d709a3efe2d11e82a6c369b0b47dc2d488f292a3213083102e6afbf009282c18cdb4b263c0cf6194e5c0cdfd4c735e180e25704015003851459b682bb53e2c8
@@ -2559,14 +2582,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/material@npm:^5.13.3":
-  version: 5.13.5
-  resolution: "@mui/material@npm:5.13.5"
+"@mui/material@npm:5.13.3":
+  version: 5.13.3
+  resolution: "@mui/material@npm:5.13.3"
   dependencies:
     "@babel/runtime": ^7.21.0
-    "@mui/base": 5.0.0-beta.4
-    "@mui/core-downloads-tracker": ^5.13.4
-    "@mui/system": ^5.13.5
+    "@mui/base": 5.0.0-beta.3
+    "@mui/core-downloads-tracker": ^5.13.3
+    "@mui/system": ^5.13.2
     "@mui/types": ^7.2.4
     "@mui/utils": ^5.13.1
     "@types/react-transition-group": ^4.4.6
@@ -2588,7 +2611,7 @@ __metadata:
       optional: true
     "@types/react":
       optional: true
-  checksum: 8d45708111f2d118a83e702895850b2db1086eec848e068ec7c7630dd4a79acf571ac29297735e5307f570aa74ebb642cd2e89cfc35d6364c2ec0fadb9cc5eb9
+  checksum: 9083edc8a6979d9ed387c75d19d8ea5485fe8edc32bed47387f4624d2b34e9b9f6b2a6af7102b2ec82db74681b010b651e6f5c351c0c90edb31f61bd23ddfe61
   languageName: node
   linkType: hard
 
@@ -2646,7 +2669,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/system@npm:^5.13.5":
+"@mui/system@npm:^5.13.2":
   version: 5.13.5
   resolution: "@mui/system@npm:5.13.5"
   dependencies:
@@ -2792,7 +2815,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@popperjs/core@npm:^2.11.8":
+"@popperjs/core@npm:^2.11.7, @popperjs/core@npm:^2.11.8":
   version: 2.11.8
   resolution: "@popperjs/core@npm:2.11.8"
   checksum: e5c69fdebf52a4012f6a1f14817ca8e9599cb1be73dd1387e1785e2ed5e5f0862ff817f420a87c7fc532add1f88a12e25aeb010ffcbdc98eace3d55ce2139cf0
@@ -4169,11 +4192,12 @@ __metadata:
   resolution: "allgood-frontend@workspace:."
   dependencies:
     "@craco/craco": ^7.1.0
-    "@emotion/react": ^11.11.0
+    "@emotion/react": 11.11.0
     "@emotion/styled": ^11.11.0
     "@fontsource/roboto": ^5.0.2
+    "@mui/base": ^5.0.0-beta.4
     "@mui/icons-material": ^5.11.16
-    "@mui/material": ^5.13.3
+    "@mui/material": 5.13.3
     "@mui/styled-engine-sc": ^5.12.0
     "@reduxjs/toolkit": ^1.9.5
     "@testing-library/jest-dom": ^5.16.5
