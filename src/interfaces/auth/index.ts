@@ -1,7 +1,3 @@
-export interface KnownError {
-  msg: string
-}
-
 export interface User {
   user: {
     userId: string

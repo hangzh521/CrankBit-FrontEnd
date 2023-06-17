@@ -1,22 +1,22 @@
-import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { FC, useEffect } from 'react'
+import { useNavigate, Link } from 'react-router-dom'
 import { registerUser } from '@/features/auth/authSlice'
 import { useAppDispatch, useAppSelector } from '@/app/hooks'
 
-const SignUp = () => {
+const SignUp: FC = () => {
   const { user } = useAppSelector((state) => state.auth)
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
   // TODO: Use actual form value in the future, this is test only, and please remove in database
-  const handleRegister = () => {
-    const user = {
+  const handleRegister = (): void => {
+    const testUser = {
       name: 'John Doe',
       email: 'john@gmail.com',
       password: 'password123',
     }
 
-    dispatch(registerUser(user))
+    dispatch(registerUser(testUser))
   }
 
   useEffect(() => {
@@ -28,10 +28,20 @@ const SignUp = () => {
   }, [user, navigate])
 
   return (
-    <div>
-      <button onClick={handleRegister}>Register</button>
-      
-    </div>
+    <>
+      <div>
+        <button type="button" onClick={handleRegister} className="text-white">
+          Continue woth Google
+        </button>
+      </div>
+      <Link className="text-xl" to="/auth/signup/create-account">
+        <div>
+          <button type="button" onClick={handleRegister} className="text-white">
+            Sign up with email
+          </button>
+        </div>
+      </Link>
+    </>
   )
 }
 

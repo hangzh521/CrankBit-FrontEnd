@@ -1,5 +1,6 @@
 import { FC } from 'react'
+import HomeNavigation from '@/components/HomeNavigation'
 
-const Header: FC = () => <div>This is header</div>
+const Header: FC = () => <HomeNavigation />
 
 export default Header
