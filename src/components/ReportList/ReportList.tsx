@@ -15,10 +15,7 @@ const style = {
 
 const ReportList: FC = () => {
   const [selectedIndex, setSelectedIndex] = useState(1)
-  const handleListItemClick = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
-    index: number
-  ): void => {
+  const handleListItemClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>, index: number): void => {
     setSelectedIndex(index)
   }
   return (
