@@ -1,6 +1,5 @@
 import { useState, FC } from 'react'
 import { BiEnvelope, BiPhone, BiChat } from 'react-icons/bi';
-import Button from '@/components/Button';
 import ChatboxPage from '../ChatBox/ChatboxPage';
 
 interface OpenButtonProps {
