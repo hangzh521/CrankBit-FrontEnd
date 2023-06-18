@@ -78,7 +78,7 @@ const router = createHashRouter([
   {
     path: '/getstarted',
     element: <Getstarted />,
-  }
+  },
   {
     path: '/contact',
     element: <Contact />,
