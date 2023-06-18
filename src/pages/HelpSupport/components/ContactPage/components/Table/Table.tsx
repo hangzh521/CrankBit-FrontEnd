@@ -12,17 +12,17 @@ const Table: FC<TableProps> = ({ onAnswerVisibilityChange }) => {
 
   const toggleAnswerVisibility1 = (): void => {
     setIsAnswerVisible1(!isAnswerVisible1);
-    onAnswerVisibilityChange(!isAnswerVisible1); // 传递当前可见性状态
+    onAnswerVisibilityChange(!isAnswerVisible1);
   };
 
   const toggleAnswerVisibility2 = (): void => {
     setIsAnswerVisible2(!isAnswerVisible2);
-    onAnswerVisibilityChange(!isAnswerVisible2); // 传递当前可见性状态
+    onAnswerVisibilityChange(!isAnswerVisible2);
   };
 
   const toggleAnswerVisibility3 = (): void => {
     setIsAnswerVisible3(!isAnswerVisible3);
-    onAnswerVisibilityChange(!isAnswerVisible3); // 传递当前可见性状态
+    onAnswerVisibilityChange(!isAnswerVisible3);
   };
 
   const handleAnswerVisibilityChange = (): JSX.Element => {
