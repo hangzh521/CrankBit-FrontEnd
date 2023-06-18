@@ -5,10 +5,10 @@ interface TableProps {
   onAnswerVisibilityChange: (isVisible: boolean) => void;
 }
 
-const Table: FC<TableProps> = ({ onAnswerVisibilityChange }) => {
-  const [isAnswerVisible1, setIsAnswerVisible1] = useState(false);
-  const [isAnswerVisible2, setIsAnswerVisible2] = useState(false);
-  const [isAnswerVisible3, setIsAnswerVisible3] = useState(false);
+const Table: FC<TableProps> = ({ onAnswerVisibilityChange }: TableProps) => {
+  const [isAnswerVisible1, setIsAnswerVisible1] = useState<boolean>(false);
+  const [isAnswerVisible2, setIsAnswerVisible2] = useState<boolean>(false);
+  const [isAnswerVisible3, setIsAnswerVisible3] = useState<boolean>(false);
 
   const toggleAnswerVisibility1 = (): void => {
     setIsAnswerVisible1(!isAnswerVisible1);
