@@ -84,7 +84,7 @@ const ChatboxPage: FC<DialogBoxProps> = ({ isOpen, handleClose }) => {
               <div>
                 <input
                   type="text"
-                  placeholder="输入聊天内容..."
+                  placeholder="Enter chat content..."
                   className="px-4 py-2 mt-4 ml-2 w-[280px] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 border-2 border-blue-400 chatbox-input"
                   onClick={(event) => {
                     event.stopPropagation();
