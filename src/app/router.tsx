@@ -9,11 +9,14 @@ import KnowledgeBase from '@/pages/KnowledgeBase'
 import HelpSupport from '@/pages/HelpSupport/HelpSupport'
 import PrivateRoute from '@/routes/PrivateRoute'
 import MyAccount from '@/pages/MyAccount'
+
+import ReportS1 from '@/pages/Report_s1'
 import Profile from '@/pages/Profile'
 import LoginForCompany from '@/pages/Login/components/LoginForCompany/LoginForCompany'
 import CreateAccount from '@/pages/CreateAccount/CreateAccount'
 import ReportsHistory from '@/pages/MyReports/components/ReportsHistory'
 import Getstarted from '@/pages/Getstarted/Getstarted'
+import Contact from '@/pages/Contact/Contact'
 
 const isLoggedIn = true
 
@@ -55,8 +58,8 @@ const router = createHashRouter([
     ),
   },
   {
-    path: '/usr/profile',
-    element: <Profile />,
+    path: '/usr/reportS1',
+    element: <ReportS1 />,
   },
   {
     path: '/login-for-company',
@@ -76,6 +79,10 @@ const router = createHashRouter([
     path: '/getstarted',
     element: <Getstarted />,
   }
+  {
+    path: '/contact',
+    element: <Contact />,
+  },
 ])
 
 const App: FC = () => <RouterProvider router={router} />
