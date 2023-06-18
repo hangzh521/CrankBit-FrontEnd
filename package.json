@@ -112,10 +112,6 @@
       "git add ."
     ]
   },
-  "engines": {
-    "node": "^18.0.0",
-    "yarn": "^3.6.0"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -127,6 +123,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "packageManager": "yarn@3.6.0"
+  }
 }
