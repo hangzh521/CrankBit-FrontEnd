@@ -10,6 +10,7 @@ module.exports = {
         border: '#E6E6E6',
         gray: '#CBD5E1',
         hover: '#007AD3',
+        skyblue: '#007AD3',
         textColorBlack: '#1E1E1E',
       },
       borderColor: {

@@ -13,6 +13,7 @@ import Profile from '@/pages/Profile'
 import LoginForCompany from '@/pages/Login/components/LoginForCompany/LoginForCompany'
 import CreateAccount from '@/pages/CreateAccount/CreateAccount'
 import ReportsHistory from '@/pages/MyReports/components/ReportsHistory'
+import Getstarted from '@/pages/Getstarted/Getstarted'
 
 const isLoggedIn = true
 
@@ -71,6 +72,10 @@ const router = createHashRouter([
     path: '/my-reports/history',
     element: <ReportsHistory />,
   },
+  {
+    path: '/getstarted',
+    element: <Getstarted />,
+  }
 ])
 
 const App: FC = () => <RouterProvider router={router} />
