@@ -112,6 +112,10 @@
       "git add ."
     ]
   },
+  "engines": {
+    "node": "^18.0.0",
+    "yarn": "^3.6.0"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
