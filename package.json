@@ -15,7 +15,7 @@
     "slint:f": "stylelint --fix \"src/**/*.{css,scss}\"",
     "prepare": "husky install",
     "postinstall": "husky install",
-    "pre-commit": "npx --no-install lint-staged"
+    "pre-commit": "npm lint && npx --no-install lint-staged"
   },
   "dependencies": {
     "@emotion/react": "11.11.0",
@@ -97,18 +97,18 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
+      "git add .",
       "prettier --write .",
-      "eslint --fix --ext .js,.jsx,.ts,.tsx src/ --no-cache",
-      "git add ."
+      "eslint --fix --ext .js,.jsx,.ts,.tsx src/ --no-cache"
     ],
     "*.{css,scss}": [
+      "git add .",
       "prettier --write .",
-      "stylelint --fix \"src/**/*.{css,scss}\"",
-      "git add ."
+      "stylelint --fix \"src/**/*.{css,scss}\""
     ],
     "*.{json,md,html}": [
-      "prettier --write .",
-      "git add ."
+      "git add .",
+      "prettier --write ."
     ]
   },
   "engines": {
