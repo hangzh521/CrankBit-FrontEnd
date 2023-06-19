@@ -17,7 +17,7 @@ const OpenButton: FC<OpenButtonProps> = ({ handleOpen }) => (
 );
 
 const ContactPage: FC = (): JSX.Element => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleOpen = (): void => {
     setIsOpen(true);
