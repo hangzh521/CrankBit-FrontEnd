@@ -9,22 +9,27 @@ const ListCreation = [
       {
         id: uuidv4(),
         text: 'Steps to create a new report',
+        url: '/',
       },
       {
         id: uuidv4(),
         text: 'Steps to edit an existing report',
+        url: '/',
       },
       {
         id: uuidv4(),
         text: 'Steps to edit a contact report',
+        url: '/',
       },
       {
         id: uuidv4(),
         text: 'Steps to edit a template',
+        url: '/',
       },
       {
         id: uuidv4(),
         text: 'Creating a complex report',
+        url: '/',
       },
     ],
   },
@@ -34,18 +39,22 @@ const ListCreation = [
       {
         id: uuidv4(),
         text: 'Payment shows failed',
+        url: '/',
       },
       {
         id: uuidv4(),
         text: 'About refund policy',
+        url: '/',
       },
       {
         id: uuidv4(),
         text: 'Privacy of card payments',
+        url: '/',
       },
       {
         id: uuidv4(),
         text: 'Upgrading to a premium account',
+        url: '/',
       },
     ],
   },
@@ -55,14 +64,17 @@ const ListCreation = [
       {
         id: uuidv4(),
         text: 'What to do when forgetting password',
+        url: '/',
       },
       {
         id: uuidv4(),
         text: 'How to activate dark mode',
+        url: '/',
       },
       {
         id: uuidv4(),
         text: 'Enable / Disable 2-step verification',
+        url: '/',
       },
     ],
   },

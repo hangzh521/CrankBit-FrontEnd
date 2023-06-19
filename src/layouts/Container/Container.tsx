@@ -11,7 +11,7 @@ interface Props {
 }
 
 const Container: FC<Props> = ({ children, className = undefined }) => (
-  <div className={classNames('min-w-[390px] max-w-container', 'mx-auto', className)}>{children}</div>
+  <div className={classNames('min-w-[390px]', 'max-w-container', 'mx-auto', className)}>{children}</div>
 )
 
 export default Container
