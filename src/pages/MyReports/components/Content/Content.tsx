@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { BiFile } from 'react-icons/bi'
 import { CiSearch } from 'react-icons/ci'
+import { Link } from 'react-router-dom'
 import Button from '@/components/Button'
 import ReportViewToggle from './components/ReportViewToggle'
 
@@ -21,7 +22,9 @@ const Content: FC = () => (
         </div>
       </Button>
       <Button className="w-[250px] h-[90px] hover:bg-hover">Browse Templates</Button>
-      <Button className="w-[250px] h-[90px] hover:bg-hover">Report History</Button>
+      <Link to="/my-reports/history">
+        <Button className="w-[250px] h-[90px] hover:bg-hover">Report History</Button>
+      </Link>
     </div>
     <ReportViewToggle />
   </div>

@@ -1,26 +1,16 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import Icon from './components/Icon/Icon'
-import List from './components/List/List'
-import Button from './components/Button/Button'
 
 interface Props {
   icon: string
-  plan: string
-  price: string
-  className: string
-  PlanList: string[]
-  ListIcon: string
-  PriceText: string
+  title: string
+  children: ReactNode
 }
-const PlanCard: FC<Props> = ({ icon, plan, price, PlanList, className, ListIcon, PriceText }) => (
-  <div className={className}>
+const PlanCard: FC<Props> = ({ icon, title, children }) => (
+  <div className="w-90 rounded-xl p-11">
     <Icon icon={icon} />
-    <div className="text-left">
-      <p>{plan}</p>
-      <p className={PriceText}>{price}</p>
-    </div>
-    <List PlanList={PlanList} ListIcon={ListIcon} />
-    <Button />
+    <div className="text-left text-xl">{title}</div>
+    <div>{children}</div>
   </div>
 )
 export default PlanCard

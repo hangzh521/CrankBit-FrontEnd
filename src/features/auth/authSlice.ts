@@ -2,11 +2,7 @@ import { AxiosError } from 'axios'
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { RootState } from '@/app/store'
 import { loginApi, registerApi } from '@/services/user'
-import {
-  getUserFromLocalStorage,
-  addUserToLocalStorage,
-  removeUserFromLocalStorage,
-} from '@/utils/localStorage'
+import { getUserFromLocalStorage, addUserToLocalStorage, removeUserFromLocalStorage } from '@/utils/localStorage'
 import { User, RegisterPayload, LoginPayload, AuthState } from '@/interfaces/auth'
 
 const initialState: AuthState = {
