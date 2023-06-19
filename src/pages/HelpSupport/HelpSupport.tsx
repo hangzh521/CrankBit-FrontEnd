@@ -7,7 +7,7 @@ import Table from './components/ContactPage/components/Table';
 import QAHeader from './components/ContactPage/components/Table/components/QAHeader';
 
 const HelpSupport: FC = () => {
-  const [pageHeight, setPageHeight] = useState(1100);
+  const [pageHeight, setPageHeight] = useState<number>(1100);
 
   const handleAnswerVisibilityChange = (isVisible: boolean): void => {
     if (isVisible) {
