@@ -1,1 +1,1 @@
-export {default} from './Getstarted'
+export { default } from './Getstarted'
