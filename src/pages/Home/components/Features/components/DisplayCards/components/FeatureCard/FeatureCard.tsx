@@ -1,17 +1,13 @@
-import { FC } from 'react'
-import FeatureDescription from './components/FeatureDescription/FeatureDescription'
-import FeaturesIcon from './components/FeaturesIcon/FeaturesIcon'
+import { FC, ReactNode } from 'react'
 
 interface Props {
-  icon: string
   content: string
-  description: string
+  children: ReactNode
 }
-
-const FeatureCard: FC<Props> = ({ icon, content, description }) => (
-  <div className=" flex-col w-60 h-40 shadow-2xl m-5 rounded-lg p-10">
-    <FeaturesIcon icon={icon} content={content} />
-    <FeatureDescription description={description} />
+const FeatureCard: FC<Props> = ({ content, children }) => (
+  <div className="w-60 h-40 shadow-2xl m-5 rounded-lg p-10">
+    <div>{children}</div>
+    <div>{content}</div>
   </div>
 )
 export default FeatureCard

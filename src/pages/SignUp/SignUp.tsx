@@ -1,5 +1,5 @@
 import { FC, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { registerUser } from '@/features/auth/authSlice'
 import { useAppDispatch, useAppSelector } from '@/app/hooks'
 
@@ -28,11 +28,20 @@ const SignUp: FC = () => {
   }, [user, navigate])
 
   return (
-    <div>
-      <button type="button" onClick={handleRegister}>
-        Register
-      </button>
-    </div>
+    <>
+      <div>
+        <button type="button" onClick={handleRegister} className="text-white">
+          Continue woth Google
+        </button>
+      </div>
+      <Link className="text-xl" to="/auth/signup/create-account">
+        <div>
+          <button type="button" onClick={handleRegister} className="text-white">
+            Sign up with email
+          </button>
+        </div>
+      </Link>
+    </>
   )
 }
 
