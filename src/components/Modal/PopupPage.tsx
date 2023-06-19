@@ -15,42 +15,27 @@ const PopupPage: FC = () => {
   return (
     <Container>
       <div className="flex justify-center items-center">
-        <div className="box-border border rounded-md w-96 h-80 my-10 bg-white">
-          <div className="flex justify-end ">
+        <div className="border rounded-md w-96 h-80 bg-white">
+          <div className="text-end">
             <IconButton
-              aria-label="close"
-              className="text-slack-950 w-12 h-12 bg-green-500"
               onClick={handleClose}
+              className="text-black w-12 h-12"
             >
               <CloseRoundedIcon
-                className="text-black"
-                style={
-                {
-                  fontSize: '2rem'
-                }
-              }
+                className="text-black text-[32px]"
               />
             </IconButton>
           </div>
-          <div className="flex justify-center items-center m-8">
+          <div className="flex justify-center">
             <div
               className="bg-green-600 w-20 h-20 flex justify-center rounded-full"
             >
-              <IconButton
-                aria-label="Check"
-              >
-                <CheckRounded
-                  className="text-white font-inner"
-                  style={{
-                    fontSize: '4rem'
-                  }}
-                />
+              <IconButton>
+                <CheckRounded className="text-white font-inner text-[64px]" />
               </IconButton>
             </div>
           </div>
-          <div
-            className="font-inter font-bold text-center mt-6 mb-16 flex justify-center items-center"
-          >
+          <div className="text-center font-bold text-xl mt-6 mb-16">
             <p> Sign Up Successfully </p>
           </div>
         </div>
