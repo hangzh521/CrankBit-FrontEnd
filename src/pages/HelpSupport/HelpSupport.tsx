@@ -1,22 +1,16 @@
 import { FC } from 'react'
-import SideNavigationBar from '@/components/SideNavigationBar'
-import Container from '@/layouts/Container/Container'
-import PageContent from '@/components/PageContent/PageContent'
-import ContactPage from './components/ContactPage/ContactPage'
-import Table from './components/ContactPage/components/Table'
-import QAHeader from './components/ContactPage/components/Table/components/QAHeader'
+import UserLayout from '@/layouts/UserLayout'
+import Accordion from './components/Accordion'
+import Contact from './components/Contact'
 
 const HelpSupport: FC = () => (
-  <Container>
-    <div className="flex text-xl min-h-[832px]">
-      <SideNavigationBar />
-      <PageContent>
-        <QAHeader />
-        <Table />
-        <ContactPage />
-      </PageContent>
+  <UserLayout>
+    <div className="pt-[55px] px-20">
+      <div className="text-3xl font-bold ml-20">Help & Support</div>
+      <Accordion />
+      <Contact />
     </div>
-  </Container>
+  </UserLayout>
 )
 
 export default HelpSupport

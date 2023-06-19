@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 const MyAccount: FC = () => (
   <div>
-    <div className="text-white">MyAccount Page</div>
+    <div>MyAccount Page</div>
   </div>
 )
 

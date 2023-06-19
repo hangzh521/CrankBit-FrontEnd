@@ -3,7 +3,7 @@ import { HiOutlineCamera } from 'react-icons/hi'
 import { Link } from '@mui/material'
 
 const Report: FC = () => {
-  const [image, setImage] = useState<File | null>(null)
+  const [, setImage] = useState<File | null>(null)
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>): void => {
     if (event.target.files && event.target.files.length > 0) {
