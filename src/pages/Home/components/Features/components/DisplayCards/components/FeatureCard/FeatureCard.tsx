@@ -1,13 +1,7 @@
 import { FC, ReactNode } from 'react'
 
 interface Props {
-  content: string
   children: ReactNode
 }
-const FeatureCard: FC<Props> = ({ content, children }) => (
-  <div className="w-60 h-40 shadow-2xl m-5 rounded-lg p-10">
-    <div>{children}</div>
-    <div>{content}</div>
-  </div>
-)
+const FeatureCard: FC<Props> = ({ children }) => <div className="w-60 shadow-2xl m-6 rounded-lg p-10 ">{children}</div>
 export default FeatureCard

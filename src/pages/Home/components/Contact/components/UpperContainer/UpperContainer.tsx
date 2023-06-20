@@ -6,7 +6,7 @@ import MessageBox from './components/MessageBox'
 import SubmitButton from './components/SubmitButton/SubmitButton'
 
 const UpperContainer: FC = () => (
-  <Box className="h-[670px] bg-[#EBF1F6]">
+  <Box className="h-[670px] bg-background-light">
     <div>
       <Typography variant="h3" gutterBottom align="center" className="pt-[56px] font-bold">
         Contact
