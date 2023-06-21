@@ -10,8 +10,7 @@ const SubmitButton: FC<{ ButtonName: string }> = ({ ButtonName }) => (
       value="Submit"
     >
       {' '}
-      {ButtonName}
-      {' '}
+      {ButtonName}{' '}
     </Button>
   </div>
 )

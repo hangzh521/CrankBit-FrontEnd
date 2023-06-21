@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { loginUser } from '@/features/auth/authSlice'
 import { useAppDispatch, useAppSelector } from '@/app/hooks'
-import AuthButton from '../AuthButton/AuthButton'
+import AuthButton from '../../components/AuthButton/AuthButton'
 import { Variant } from '@/components/Button'
 
 const Login: FC = () => {
