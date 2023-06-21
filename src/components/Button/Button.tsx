@@ -8,18 +8,25 @@ export enum Variant {
   PrimaryOutline,
 }
 
+export enum Size {
+  Default,
+  Large,
+  Undefined,
+}
+
 export interface Props extends HTMLProps<HTMLButtonElement> {
   children: ReactNode
   variant?: Variant
+  size?: Size
   type?: 'button' | 'submit' | 'reset' | undefined
   block?: boolean
-  DefaultAuthButtonStyle?: boolean
 }
 
 const Button: FC<Props> = ({
   children,
   className,
   variant = Variant.Default,
+  size = Size.Default,
   type = 'button',
   block = false,
   ...props
@@ -38,6 +45,9 @@ const Button: FC<Props> = ({
       variant === Variant.Primary && ['bg-primary', 'text-white'],
       variant === Variant.PrimaryFont && ['bg-background', 'text-primary'],
       variant === Variant.PrimaryOutline && ['bg-white', 'text-primary', 'border', 'border-primary'],
+      size === Size.Default && ['h-10'],
+      size === Size.Large && ['w-72', 'h-12'],
+      size === Size.Undefined && [],
       block && ['block', 'w-full'],
       className
     )}
