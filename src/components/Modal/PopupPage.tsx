@@ -12,7 +12,8 @@ const PopupPage: FC = () => {
   }
   return (
     <Container>
-        <div className="border rounded-md w-[494px] h-[405px] max-auto text-center">
+      <div className="bg-[#03111B] bg-opacity-40 flex maxWidth h-[832px] items-center justify-center">
+        <div className="rounded-[10px] w-[494px] h-[405px] max-auto text-center bg-white shadow-md border-solid border-[#03111B] border-opacity-40">
           <div className="text-end pr-5 pt-5 mb-8">
               <CloseRoundedIcon onClick={handleClose} className="text-[32px] cursor-pointer" />
           </div>
@@ -25,6 +26,7 @@ const PopupPage: FC = () => {
            Sign Up Successfully
           </div>
         </div>
+      </div>
     </Container>
   )
 }
