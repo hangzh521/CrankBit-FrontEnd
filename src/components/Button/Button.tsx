@@ -11,6 +11,7 @@ export enum Variant {
 export enum Size {
   Default,
   Large,
+  Undefined,
 }
 
 export interface Props extends HTMLProps<HTMLButtonElement> {
@@ -46,6 +47,7 @@ const Button: FC<Props> = ({
       variant === Variant.PrimaryOutline && ['bg-white', 'text-primary', 'border', 'border-primary'],
       size === Size.Default && ['h-10'],
       size === Size.Large && ['w-72', 'h-12'],
+      size === Size.Undefined && [],
       block && ['block', 'w-full'],
       className
     )}
