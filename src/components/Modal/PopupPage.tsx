@@ -3,7 +3,28 @@ import CheckRounded from '@mui/icons-material/CheckRounded'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded'
 import Container from '@/layouts/Container'
 
-// popup的入口文件是create-account /auth/signup/create-account，
+// popup的入口文件是create-account /auth/signup/create-account，目前还没有写出的页面
+// import PopupPage from "@/components/Modal";
+// const CreateAccount: FC = () => {
+  // const [isOpen, setIsOpen] = useState<boolean>(false)
+  // const togglePopup = (): void => {
+   // setIsOpen(!isOpen);
+  // };
+  // const closePopup = ():void =>{
+   // setIsOpen(false)
+  // }
+  // return (
+    // <Container>
+     // <div>
+     // ...
+       // <Button onClick={togglePopup}/>
+     // </div>
+      // {isOpen &&< PopupPage onClose={closePopup}/>}
+    // </Container>
+ // )
+// }
+// export default CreateAccount
+
 const PopupPage: FC<{onClose:()=>void}> = ({onClose}) =>
 ( <Container>
       <div className="fixed top-0 left-0 w-full h-full bg-[#03111B] bg-opacity-40 flex items-center justify-center z-50">
