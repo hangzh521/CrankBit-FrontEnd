@@ -10,7 +10,7 @@ const Content: FC = () => {
   const [viewMode, SetViewMode] = useState<'list' | 'card'>('list')
 
   return (
-    <div className="w-[975px] bg-[#E9EFF4] pt-14 px-20 h-full">
+    <div className="w-[975px] bg-[#E9EFF4] pt-14 px-20">
       <div className="flex items-center justify-between">
         <div className="font-bold text-3xl">Good Morning, Alonso</div>
         <Button className="text-center w-[250px] h-10 bg-hover">
