@@ -1,0 +1,109 @@
+name: S3 Bucket Deploy
+on:
+  push:
+    branches:
+      - 'CB**'
+      - main
+      - uat
+      - prod
+
+  pull_request:
+    branches:
+      - main
+      - uat
+      - prod
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+env:
+  CI: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # - name: Run Snyk to check for vulnerabilities
+      #   uses: snyk/actions/node@master
+      #   env:
+      #     SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      #   with:
+      #     args: --severity-threshold=high 
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run npm lint
+        run: npm run lint
+
+      - name: Run npm test
+        run: npm test
+ 
+  build:
+    if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/uat' || github.ref == 'refs/heads/prod'}}
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Build frontend 
+        env:
+          REACT_APP_BACKEND_BASE_URL: ${{ secrets.REACT_APP_BACKEND_BASE_URL }}
+        run: |
+          npm install
+          npm run build
+      
+      - name: Archive build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: crankbit-frontend-build
+          path: build
+
+  deploy-to-s3:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
+      
+      - name: Download build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: crankbit-frontend-build
+          path: build
+
+      - if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        name: Sync Files to S3 DEV
+        run: |
+          aws s3 sync ./build s3://www.dev.hangzh.click
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.DEV_DISTRIBUTION_ID }} --paths "/*"
+
+      - if: github.event_name == 'push' && github.ref == 'refs/heads/uat'
+        name: Sync Files to S3 UAT
+        run: |
+          aws s3 sync ./build s3://www.uat.hangzh.click
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.UAT_DISTRIBUTION_ID }} --paths "/*"
+      
+      - if: github.event_name == 'push' && github.ref == 'refs/heads/prod'
+        name: Sync Files to S3 PROD
+        run: |
+          aws s3 sync ./build s3://www.hangzh.click
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.PROD_DISTRIBUTION_ID }} --paths "/*"

@@ -2,7 +2,7 @@ import { FC } from 'react'
 import DisplayCards from './components/DisplayCards/DisplayCards'
 
 const Features: FC = () => (
-  <div className="p-8 box-border mx-auto bg-white text-black bg-[#EBF1F6]">
+  <div className="p-8 box-border bg-background-light">
     <h2 className="text-2xl font-bold">Features</h2>
     <div className="flex">
       <DisplayCards />

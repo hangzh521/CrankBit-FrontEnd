@@ -16,13 +16,13 @@
 }
 
 html {
-  background-color: #03111b;
-  font-size: 10 0%; /* 1rem = 16px */
+  font-size: 100%;
 }
 
 body {
-  font-size: 1rem; /* 16px */
-  font-family: Roboto, sans-serif;
+  background-color: #aebfcc;
+  font-size: 16px;
+  font-family: Inter, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
