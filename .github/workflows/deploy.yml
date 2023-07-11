@@ -77,6 +77,12 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
+      
+      - name: Download build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: crankbit-frontend-build
+          path: build
 
       - if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         name: Sync Files to S3 DEV
