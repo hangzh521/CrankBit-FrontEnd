@@ -44,7 +44,7 @@ pipeline {
             when {
                 branch 'main' 
             }
-            
+
             steps {
                 sh 'npm run build'
                 sh "aws s3 sync ./build s3://www.dev.hangzh.click/"
@@ -85,7 +85,7 @@ pipeline {
 
             steps {
                 sh 'npm run build'
-                sh "aws s3 sync ./build s3://www.prod.hangzh.click/"
+                sh "aws s3 sync ./build s3://www.hangzh.click/"
                 sh 'aws cloudfront create-invalidation --distribution-id  "${PROD_DISTRIBUTION_ID}" --paths "${PATHS_TO_INVALIDATE}"'
             }
         }
