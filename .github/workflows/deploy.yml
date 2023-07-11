@@ -63,6 +63,12 @@ jobs:
         run: |
           npm install
           npm run build
+      
+      - name: Archive build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: crankbit-frontend-build
+          path: build
 
   deploy-to-s3:
     needs: build
