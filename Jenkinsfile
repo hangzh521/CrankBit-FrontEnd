@@ -14,12 +14,7 @@ pipeline {
     }
 
     stages {
-        // stage('Checkout') {
-        //     steps {
-        //         git url: 'https://github.com/hangzh521/CrankBit-FrontEnd.git'
-        //     }
-        // }
-
+        
         stage('Install') {
             steps {
                 sh 'npm install'
