@@ -64,10 +64,9 @@ jobs:
           npm install
           npm run build
 
-  deploy:
+  deploy-to-s3:
     needs: build
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main' || github.event_name == 'push' && github.ref == 'refs/heads/uat' || github.event_name == 'push' && github.ref == 'refs/heads/prod'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
