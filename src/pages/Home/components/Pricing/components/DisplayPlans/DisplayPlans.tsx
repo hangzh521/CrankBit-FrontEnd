@@ -12,24 +12,45 @@ const PremiumList = [
 
 const DisplayPlans: FC = () => (
   <div className="flex justify-center">
-    <PlanCard
-      icon="./svg/StarterIcon.svg"
-      plan="Starter"
-      price="FREE"
-      PlanList={StarterList}
-      className="bg-white text-black rounded-lg p-11 mr-4 w-80"
-      ListIcon="./svg/ListIconStarter.svg"
-      PriceText="text-3xl text-[#007AD3]"
-    />
-    <PlanCard
-      icon="./svg/PremiumIcon.svg"
-      plan="Premium"
-      price="$ 4.99/month"
-      PlanList={PremiumList}
-      className="bg-[#007AD3] text-white rounded-lg p-11 ml-4 w-80"
-      ListIcon="./svg/ListIconPremium.svg"
-      PriceText="text-3xl"
-    />
+    <div className="bg-white rounded-xl text-black mr-10">
+      <PlanCard icon="./svg/StarterIcon.svg" title="Starter">
+        <div className="text-[#007AD3] text-3xl text-left font-bold">FREE</div>
+        <ul className="list-none">
+          {StarterList.map((item) => (
+            <li key={item} className="my-10 text-black text-left">
+              <img className="inline mr-9" src="./svg/ListIconStarter.svg" alt="" />
+              {item}
+            </li>
+          ))}
+        </ul>
+        <button
+          type="button"
+          className="text-center text- primary w-60 border py-2.5 rounded-md border-primary bg-white"
+        >
+          Choose Plan
+        </button>
+      </PlanCard>
+    </div>
+
+    <div className="bg-primary text-white rounded-xl">
+      <PlanCard icon="./svg/PremiumIcon.svg" title="Premium">
+        <div className="text-white text-3xl text-left font-bold">$4.99/month</div>
+        <ul className="list-none">
+          {PremiumList.map((item) => (
+            <li key={item} className="my-10 text-white text-left">
+              <img className="inline mr-9" src="./svg/ListIconPremium.svg" alt="" />
+              {item}
+            </li>
+          ))}
+        </ul>
+        <button
+          type="button"
+          className="text-center text-primary w-60 border py-2.5 rounded-md border-primary bg-white"
+        >
+          Choose Plan
+        </button>
+      </PlanCard>
+    </div>
   </div>
 )
 export default DisplayPlans

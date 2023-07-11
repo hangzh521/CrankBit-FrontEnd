@@ -18,18 +18,18 @@
     "pre-commit": "npx --no-install lint-staged"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.0",
+    "@emotion/react": "11.11.0",
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.2",
+    "@mui/base": "^5.0.0-beta.4",
     "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.13.3",
+    "@mui/material": "5.13.3",
     "@mui/styled-engine-sc": "^5.12.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/react-icons": "^3.0.0",
     "axios": "^1.4.0",
     "classnames": "^2.3.2",
     "dotenv": "^16.1.1",
-    "eslint-plugin-jest": "^27.2.1",
     "formik": "^2.4.0",
     "loadsh": "^0.0.4",
     "moment": "^2.29.4",
@@ -64,6 +64,7 @@
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jest": "^27.2.1",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
@@ -75,7 +76,7 @@
     "postcss": "^8.4.24",
     "prettier": "^2.8.8",
     "stylelint": "^15.3.0",
-    "stylelint-config-standard-scss": "^7.0.1",
+    "stylelint-config-standard": "^33.0.0",
     "tailwindcss": "^3.3.2",
     "typescript": "^4.6.4"
   },
@@ -95,24 +96,18 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,}": [
+    "*.{js,jsx,ts,tsx}": [
       "prettier --write .",
-      "eslint --fix --ext .js,.jsx,.ts,.tsx src/ --no-cache",
+      "eslint --fix --ext .js,.jsx,.ts,.tsx src/ --fix --no-cache",
       "git add ."
     ],
     "*.{css,scss}": [
-      "prettier --write .",
       "stylelint --fix \"src/**/*.{css,scss}\"",
-      "git add ."
-    ],
-    "*.{json,md,html}": [
-      "prettier --write .",
       "git add ."
     ]
   },
   "engines": {
-    "node": "^18.0.0",
-    "yarn": "^3.6.0"
+    "node": "^18.0.0"
   },
   "browserslist": {
     "production": [
