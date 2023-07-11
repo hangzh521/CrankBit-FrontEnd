@@ -33,11 +33,11 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                sh 'npm run build'
-            }
-        }
+        // stage('Build') {
+        //     steps {
+        //         sh 'npm run build'
+        //     }
+        // }
 
         // stage('for the PR') {
         //     when {
@@ -69,6 +69,7 @@ pipeline {
                 branch 'dev' 
             }
             steps {
+                sh 'npm run build'
                 sh "aws s3 sync ./build s3://www.dev.hangzh.click/"
                 sh 'aws cloudfront create-invalidation --distribution-id  "${DEV_DISTRIBUTION_ID}" --paths "${PATHS_TO_INVALIDATE}"'
                 }
@@ -87,6 +88,7 @@ pipeline {
             }
 
             steps {
+                sh 'npm run build'
                 sh "aws s3 sync ./build s3://www.uat.hangzh.click/"
                 sh 'aws cloudfront create-invalidation --distribution-id  "${UAT_DISTRIBUTION_ID}" --paths "${PATHS_TO_INVALIDATE}"'
                 }
@@ -104,6 +106,7 @@ pipeline {
                     branch 'prod' 
                 }
                 steps {
+                    sh 'npm run build'
                     sh "aws s3 sync ./build s3://www.prod.hangzh.click/"
                     sh 'aws cloudfront create-invalidation --distribution-id  "${PROD_DISTRIBUTION_ID}" --paths "${PATHS_TO_INVALIDATE}"'
                     }
