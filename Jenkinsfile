@@ -39,24 +39,23 @@ pipeline {
             }
         }
 
-        stage('for the PR') {
-            when {
-                branch 'PR-*' // Only run this stage for PR 
-            }
-            steps {
-                echo 'this is running for PRs'
-            }
-        }
+        // stage('for the PR') {
+        //     when {
+        //         branch 'PR-*' // Only run this stage for PR 
+        //     }
+        //     steps {
+        //         echo 'this is running for PRs'
+        //     }
+        // }
 
-        stage('for the CB branch') {
-            when {
-                branch 'CB-*' 
-            }
-            steps {
-                echo 'this is running for CB'
-            }
-        }
-
+        // stage('for the CB branch') {
+        //     when {
+        //         branch 'CB-*' 
+        //     }
+        //     steps {
+        //         echo 'this is running for CB'
+        //     }
+        // }
 
         stage('Deploy to Dev Account') {
             
