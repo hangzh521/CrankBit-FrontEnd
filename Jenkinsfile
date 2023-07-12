@@ -110,4 +110,15 @@ pipeline {
         }
     }
 
+    post {
+        failure {
+            emailext(attachLog:true, body:'failed', subject:'frontend build failed', to:'zhaohang521@hotmail.com')
+            echo "your frontend build failed"
+        }
+
+        success {
+            emailext(attachLog:true, body:'succeed', subject:'frontend build succeed', to:'zhaohang521@hotmail.com')
+            echo "your frontend build succeed"
+        }
+    }
 }
