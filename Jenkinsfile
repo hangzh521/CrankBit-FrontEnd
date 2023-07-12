@@ -14,7 +14,26 @@ pipeline {
     }
 
     stages {
+
+        stage('SonarQube Scan') {
+            steps {
+             script {
+               def scannerHome = tool 'SonarScanner'
+               withSonarQubeEnv('SonarQube Server') {
+                sh "${scannerHome}/bin/sonar-scanner"   
+              }
+            }
+          }
+        }
         
+        stage("Quality Gate") {
+            steps {
+              timeout(time: 2, unit: 'MINUTES') {
+                waitForQualityGate abortPipeline: true
+            }
+          }
+        }
+
         stage('Install') {
             steps {
                 sh 'npm install'
@@ -91,4 +110,15 @@ pipeline {
         }
     }
 
+    post {
+        failure {
+            emailext(attachLog:true, body:'failed', subject:'frontend build failed', to:'zhaohang521@hotmail.com')
+            echo "your frontend build failed"
+        }
+
+        success {
+            emailext(attachLog:true, body:'succeed', subject:'frontend build succeed', to:'zhaohang521@hotmail.com')
+            echo "your frontend build succeed"
+        }
+    }
 }
