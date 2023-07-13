@@ -74,7 +74,6 @@ pipeline {
         }
     }
   
-
     post {
         failure {
             emailext(attachLog: true, body: 'failed', subject: 'frontend build failed', to: 'zhaohang521@hotmail.com')
