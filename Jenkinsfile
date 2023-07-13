@@ -55,7 +55,7 @@ pipeline {
                 script {
                     def currentBranch = env.BRANCH_NAME.toLowerCase()
                     def deployConfig = [
-                        dev: [account: 'dev', distributionId: DEV_DISTRIBUTION_ID, baseUrl: 'www.dev.hangzh.click'],
+                        main: [account: 'main', distributionId: DEV_DISTRIBUTION_ID, baseUrl: 'www.dev.hangzh.click'],
                         uat: [account: 'uat', distributionId: UAT_DISTRIBUTION_ID, baseUrl: 'www.uat.hangzh.click'],
                         prod: [account: 'prod', distributionId: PROD_DISTRIBUTION_ID, baseUrl: 'www.hangzh.click']
                     ][currentBranch]
