@@ -65,7 +65,7 @@ pipeline {
             }
 
             steps {
-              withVault(configuration: [timeout: 60, vaultCredentialId: 'vault-jenkins-role', vaultUrl: 'http://13.239.118.17:8200'], vaultSecrets: [[path: 'secrets/aws', secretValues: [[vaultKey: 'AWS_ACCESS_KEY_ID'], [vaultKey: 'AWS_SECRET_ACCESS_KEY'], [vaultKey: 'AWS_DEFAULT_REGION'],[vaultKey: 'REACT_APP_BACKEND_BASE_URL']]]]) {
+              withVault(configuration: [timeout: 60, vaultCredentialId: 'vault-jenkins-role', vaultUrl: 'http://13.239.118.17:8200'], vaultSecrets: [[path: 'secrets/crankbit/my-secret-text', secretValues: [[vaultKey: 'AWS_ACCESS_KEY_ID'], [vaultKey: 'AWS_SECRET_ACCESS_KEY'], [vaultKey: 'AWS_DEFAULT_REGION'],[vaultKey: 'REACT_APP_BACKEND_BASE_URL']]]]) {
                 sh 'npm run build'
                 sh "aws s3 sync ./build s3://www.dev.hangzh.click/"
                 sh 'aws cloudfront create-invalidation --distribution-id  "${DEV_DISTRIBUTION_ID}" --paths "${PATHS_TO_INVALIDATE}"'
