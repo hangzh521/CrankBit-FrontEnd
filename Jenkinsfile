@@ -10,11 +10,6 @@ pipeline {
         UAT_DISTRIBUTION_ID = 'E39W69KPRVB0O3'  
         PROD_DISTRIBUTION_ID = 'E2F97VQMQD24FA'  
         PATHS_TO_INVALIDATE = '/*'
-        DEPLOY_CONFIGURATIONS = [
-            main: [account: 'main', distributionId: DEV_DISTRIBUTION_ID, baseUrl: 'www.dev.hangzh.click'],
-            uat:  [account: 'uat', distributionId: UAT_DISTRIBUTION_ID, baseUrl: 'www.uat.hangzh.click'],
-            prod: [account: 'prod', distributionId: PROD_DISTRIBUTION_ID, baseUrl: 'www.hangzh.click']
-        ]
     }
 
     stages {
@@ -59,7 +54,12 @@ pipeline {
             steps {
                 script {
                     def currentBranch = env.BRANCH_NAME.toLowerCase()
-                    def deployConfig = DEPLOY_CONFIGURATIONS.find { it.key == currentBranch }
+                    def deployConfig = [
+                        dev: [account: 'dev', distributionId: DEV_DISTRIBUTION_ID, baseUrl: 'www.dev.hangzh.click'],
+                        uat: [account: 'uat', distributionId: UAT_DISTRIBUTION_ID, baseUrl: 'www.uat.hangzh.click'],
+                        prod: [account: 'prod', distributionId: PROD_DISTRIBUTION_ID, baseUrl: 'www.hangzh.click']
+                    ][currentBranch]
+                    
                     if (deployConfig) {
                         withVault(configuration: [timeout: 60, vaultCredentialId: 'vault-jenkins-role', vaultUrl: 'http://13.239.118.17:8200'], vaultSecrets: [[path: 'secrets/crankbit/my-secret-text', secretValues: [[vaultKey: 'AWS_ACCESS_KEY_ID'], [vaultKey: 'AWS_SECRET_ACCESS_KEY'], [vaultKey: 'AWS_DEFAULT_REGION'],[vaultKey: 'REACT_APP_BACKEND_BASE_URL']]]]) {
                             sh 'npm run build'
