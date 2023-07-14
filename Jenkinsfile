@@ -1,32 +1,37 @@
 pipeline {
     agent any
     
+    tools {
+        nodejs "nodejs"
+    }
+
     environment {
-        AWS_DEFAULT_REGION = 'ap-southeast-2'
-        ECR_REGISTRY = '271584491311.dkr.ecr.ap-southeast-2.amazonaws.com'
-        IMAGE_TAG = 'latest'
+        DEV_DISTRIBUTION_ID = 'E1ZJ848YXF6ROD'  
+        UAT_DISTRIBUTION_ID = 'E39W69KPRVB0O3'  
+        PROD_DISTRIBUTION_ID = 'E2F97VQMQD24FA'  
+        PATHS_TO_INVALIDATE = '/*'
     }
 
     stages {
-        // stage('SonarQube Scan') {
-        //     steps {
-        //         script {
-        //             def scannerHome = tool 'SonarScannerBackend'
-        //             withSonarQubeEnv('SonarQube Server Backend') {
-        //                 sh "${scannerHome}/bin/sonar-scanner"   
-        //             }
-        //         }
-        //     }
-        // }
-        
-        // stage("Quality Gate") {
-        //     steps {
-        //         timeout(time: 2, unit: 'MINUTES') {
-        //             waitForQualityGate abortPipeline: true
-        //         }
-        //     }
-        // }
-        
+        stage('SonarQube Scan') {
+            steps {
+                script {
+                    def scannerHome = tool 'SonarScanner'
+                    withSonarQubeEnv('SonarQube Server') {
+                        sh "${scannerHome}/bin/sonar-scanner"
+                    }
+                }
+            }
+        }
+
+        stage("Quality Gate") {
+            steps {
+                timeout(time: 2, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+
         stage('Install') {
             steps {
                 sh 'npm install'
@@ -44,51 +49,40 @@ pipeline {
                 sh 'npm run test'
             }
         }
-        
+
         stage('Deploy') {
             steps {
                 script {
                     def currentBranch = env.BRANCH_NAME.toLowerCase()
-                    def clusterName
-                    def serviceName
-                    def taskDefinition
+                    def deployConfig = [
+                        main: [account: 'main', distributionId: DEV_DISTRIBUTION_ID, baseUrl: 'www.dev.hangzh.click'],
+                        uat: [account: 'uat', distributionId: UAT_DISTRIBUTION_ID, baseUrl: 'www.uat.hangzh.click'],
+                        prod: [account: 'prod', distributionId: PROD_DISTRIBUTION_ID, baseUrl: 'www.hangzh.click']
+                    ][currentBranch]
 
-                    if (currentBranch == 'main') {
-                        clusterName = 'crankbit-cluster-main'
-                        serviceName = 'crankbit-backend-service-main'
-                        taskDefinition = 'crankbit-task-definition-main'
-                    } else if (currentBranch == 'uat') {
-                        clusterName = 'crankbit-cluster-uat'
-                        serviceName = 'crankbit-backend-service-uat'
-                        taskDefinition = 'crankbit-task-definition-uat'
-                    } else if (currentBranch == 'prod') {
-                        clusterName = 'crankbit-cluster-prod'
-                        serviceName = 'crankbit-backend-service-prod'
-                        taskDefinition = 'crankbit-task-definition-prod'
+                    if (deployConfig) {
+                        withVault(configuration: [timeout: 60, vaultCredentialId: 'vault-jenkins-role', vaultUrl: 'http://13.239.118.17:8200'], vaultSecrets: [[path: 'secrets/crankbit/my-secret-text', secretValues: [[vaultKey: 'AWS_ACCESS_KEY_ID'], [vaultKey: 'AWS_SECRET_ACCESS_KEY'], [vaultKey: 'AWS_DEFAULT_REGION'],[vaultKey: 'REACT_APP_BACKEND_BASE_URL']]]]) {
+                            sh 'npm run build'
+                            sh "aws s3 sync ./build s3://${deployConfig.baseUrl}/"
+                            sh "aws cloudfront create-invalidation --distribution-id ${deployConfig.distributionId} --paths '${PATHS_TO_INVALIDATE}'"
+                        }
                     } else {
                         echo "No deployment configuration found for branch: ${currentBranch}"
-                        return
                     }
-
-                    environment {
-                        MONGO_URI = credentials('MONGO_URI')
-                        JWT_SECRET = credentials('JWT_SECRET')
-                        JWT_LIFETIME = credentials('JWT_LIFETIME')
-                        AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
-                        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
-                        ECR_REPO = "crankbit-${currentBranch}"
-                        CLUSTER_NAME = clusterName
-                        SERVICE_NAME = serviceName
-                        TASK_DEFINITION = taskDefinition
-                    }
-
-                    sh "docker build --build-arg MONGO_URI=${MONGO_URI} --build-arg JWT_SECRET=${JWT_SECRET} --build-arg JWT_LIFETIME=${JWT_LIFETIME} -t ${ECR_REPO}:${IMAGE_TAG} ."
-                    sh "aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${ECR_REGISTRY}"
-                    sh "docker tag ${ECR_REPO}:${IMAGE_TAG} ${ECR_REGISTRY}/${ECR_REPO}:${IMAGE_TAG}"
-                    sh "docker push ${ECR_REGISTRY}/${ECR_REPO}:${IMAGE_TAG}"
-                    sh "aws ecs update-service --cluster ${CLUSTER_NAME} --service ${SERVICE_NAME} --task-definition ${TASK_DEFINITION} --force-new-deployment"
                 }
             }
+        }
+    }
+  
+    post {
+        failure {
+            emailext(attachLog: true, body: 'failed', subject: 'frontend build failed', to: 'zhaohang521@hotmail.com')
+            echo "Your frontend build failed"
+        }
+
+        success {
+            emailext(attachLog: true, body: 'succeeded', subject: 'frontend build succeeded', to: 'zhaohang521@hotmail.com')
+            echo "Your frontend build succeeded"
         }
     }
 }
