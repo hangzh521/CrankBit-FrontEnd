@@ -13,24 +13,24 @@ pipeline {
     }
 
     stages {
-        // stage('SonarQube Scan') {
-        //     steps {
-        //         script {
-        //             def scannerHome = tool 'SonarScanner'
-        //             withSonarQubeEnv('SonarQube Server') {
-        //                 sh "${scannerHome}/bin/sonar-scanner"
-        //             }
-        //         }
-        //     }
-        // }
+        stage('SonarQube Scan') {
+            steps {
+                script {
+                    def scannerHome = tool 'SonarScanner'
+                    withSonarQubeEnv('SonarQube Server') {
+                        sh "${scannerHome}/bin/sonar-scanner"
+                    }
+                }
+            }
+        }
 
-        // stage("Quality Gate") {
-        //     steps {
-        //         timeout(time: 2, unit: 'MINUTES') {
-        //             waitForQualityGate abortPipeline: true
-        //         }
-        //     }
-        // }
+        stage("Quality Gate") {
+            steps {
+                timeout(time: 2, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
 
         stage('Install') {
             steps {
@@ -66,12 +66,12 @@ pipeline {
                         }
                         
                         sh "aws cloudfront create-invalidation --distribution-id '${env."${currentBranch}_distribution_id"}' --paths '${PATHS_TO_INVALIDATE}'"
-                       }
-                   }
-               }
-           }
-       }
+                    }
+                }
+            }
+        }
     }
+}
 
     post {
         failure {
@@ -83,5 +83,5 @@ pipeline {
             emailext(attachLog: true, body: 'succeeded', subject: 'frontend build succeeded', to: 'zhaohang521@hotmail.com')
             echo "Your frontend build succeeded"
         }
-     }
+    }
 }
