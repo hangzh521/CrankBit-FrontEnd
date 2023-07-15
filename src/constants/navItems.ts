@@ -8,8 +8,8 @@ const navItems = [
   },
   {
     id: uuidv4(),
-    href: '/user/analytics',
-    label: 'Analytics',
+    href: '/user/my-reports/history',
+    label: 'Reports History',
   },
   {
     id: uuidv4(),

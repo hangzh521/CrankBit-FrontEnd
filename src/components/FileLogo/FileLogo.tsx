@@ -1,17 +1,17 @@
 import classNames from 'classnames'
 import { FC, ReactNode } from 'react'
-import { BiFile } from 'react-icons/bi'
+import { Link } from 'react-router-dom'
 
 interface Props {
-  children: ReactNode
+  children?: ReactNode
   className?: string
 }
 
-const FileLogo: FC<Props> = ({ children, className = undefined }) => (
-  <>
-    <BiFile className={classNames('text-primary', 'inline-block', className)} />
+const FileLogo: FC<Props> = ({ children = null, className = undefined }) => (
+  <Link to="/">
+    <img src="./logo.svg" className={classNames('text-primary', 'mx-auto', 'w-auto', className)} />
     {children}
-  </>
+  </Link>
 )
 
 export default FileLogo

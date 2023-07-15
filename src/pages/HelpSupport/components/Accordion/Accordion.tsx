@@ -1,77 +1,23 @@
 import { FC } from 'react'
 
 const Accordion: FC = () => (
-  <div
-    style={{
-      boxSizing: 'border-box',
-      width: '800px',
-      height: '243px',
-      border: '1px solid rgba(3, 17, 27, 0.4)',
-      margin: '50px 0px 30px 113px',
-      background: '#FFFFFF',
-      color: 'black',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-around',
-      borderRadius: '10px',
-    }}
-  >
-    <div
-      className="flex justify-between black-border"
-      style={{
-        borderBottom: '1px solid black',
-        fontSize: '22px',
-        fontWeight: 'bold',
-        display: 'flex',
-        alignItems: 'center',
-        height: '63px',
-        padding: '0px 0px 0px 30px',
-      }}
-    >
+  <div className="border-box w-[800px] h-[243px] border border-opacity-40 mx-113 my-50 bg-white text-black flex flex-col justify-between rounded-10">
+    <div className="flex justify-between black-border border-b-[1px] border-black text-22 font-bold items-center h-63 px-30">
       <div>Frequently Asked Questions</div>
     </div>
-    <div
-      className="flex justify-between black-border"
-      style={{
-        borderBottom: '1px solid black',
-        fontSize: '16px',
-        display: 'flex',
-        alignItems: 'center',
-        height: '63px',
-        padding: '0px 0px 0px 30px',
-      }}
-    >
+    <div className="flex justify-between black-border border-b-[1px] border-black text-16 items-center h-63 px-30">
       <div>Will you be adding more templates later?</div>
       <button type="button" className="mr-4">
         ▼
       </button>
     </div>
-    <div
-      className="flex justify-between black-border"
-      style={{
-        borderBottom: '1px solid black',
-        fontSize: '16px',
-        display: 'flex',
-        alignItems: 'center',
-        height: '63px',
-        padding: '0px 0px 0px 30px',
-      }}
-    >
+    <div className="flex justify-between black-border border-b-[1px] border-black text-16 items-center h-63 px-30">
       <div>Can I create custom report from scratch?</div>
       <button type="button" className="mr-4">
         ▼
       </button>
     </div>
-    <div
-      className="flex justify-between black-border"
-      style={{
-        fontSize: '16px',
-        display: 'flex',
-        alignItems: 'center',
-        height: '63px',
-        padding: '0px 0px 0px 30px',
-      }}
-    >
+    <div className="flex justify-between text-16 items-center h-63 px-30">
       <div>How to remove your “Form created using Forms Ocean” tag?</div>
       <button type="button" className="mr-4">
         ▼

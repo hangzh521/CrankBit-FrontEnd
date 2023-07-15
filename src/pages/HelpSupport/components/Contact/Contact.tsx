@@ -6,7 +6,7 @@ const Contact: FC = () => {
   const containerStyle: CSSProperties = {
     display: 'flex',
     flexDirection: 'row',
-    padding: '0 100px',
+    padding: '0 0 0 100px',
   }
 
   const tableStyle: CSSProperties = {
