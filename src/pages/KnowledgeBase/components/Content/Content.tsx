@@ -3,7 +3,7 @@ import { CiSearch } from 'react-icons/ci'
 import List from './components/List'
 
 const Content: FC = () => (
-  <div className="bg-userContentBackground min-h-screen">
+  <div className="bg-userContent min-h-screen">
     <div className="text-2xl font-bold pl-[84px] pt-14 mb-7">Knowledge Base</div>
 
     <div className="px-[188px]">
