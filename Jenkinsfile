@@ -66,12 +66,12 @@ pipeline {
                         }
                         
                         sh "aws cloudfront create-invalidation --distribution-id '${env."${currentBranch}_distribution_id"}' --paths '${PATHS_TO_INVALIDATE}'"
-                    }
-                }
-            }
-        }
+                       }
+                   }
+               }
+           }
+       }
     }
-
 
     post {
         failure {
@@ -83,5 +83,5 @@ pipeline {
             emailext(attachLog: true, body: 'succeeded', subject: 'frontend build succeeded', to: 'zhaohang521@hotmail.com')
             echo "Your frontend build succeeded"
         }
-    }
+     }
 }
