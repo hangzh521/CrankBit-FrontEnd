@@ -50,7 +50,7 @@ pipeline {
             }
         }
 
-        stage('Deploy') 
+        stage('Deploy') {
             steps {
                 script {
                     def currentBranch = env.BRANCH_NAME.toLowerCase()
