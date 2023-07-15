@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
 const Content: FC = () => (
-  <div className="flex justify-center items-center bg-white w-[640px] h-[832px]  ">
+  <div>
     <div className="relative text-left w-[280px] h-[270px]">
       <h1 className="text-[#1E1E1E] text-[22px] font-medium">Get Started</h1>
 

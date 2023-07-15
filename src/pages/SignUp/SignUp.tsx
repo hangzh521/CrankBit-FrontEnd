@@ -1,59 +1,37 @@
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { registerUser } from '@/features/auth/authSlice'
-import { useAppDispatch, useAppSelector } from '@/app/hooks'
 import AuthLayout from '@/layouts/AuthLayout'
 import Button, { Variant, Size } from '@/components/Button'
 
 const SignUp: FC = () => {
-  const { user } = useAppSelector((state) => state.auth)
-  const dispatch = useAppDispatch()
-
   const navigate = useNavigate()
-  const handleSignUpWithEmail = (): void => {
-    navigate('/auth/signup/create-account')
-  }
-
-  // NOTE: for temporary testing
-  const handleRegister = (): void => {
-    const testUser = {
-      name: 'John Doe',
-      email: 'john@gmail.com',
-      password: 'password123',
-    }
-
-    dispatch(registerUser(testUser))
-  }
-
-  useEffect(() => {
-    if (user) {
-      navigate('/account')
-    }
-  }, [user, navigate])
 
   return (
     <AuthLayout>
-      <div className="px-44 py-80 bg-white">
-        <div className="text-xl font-medium mb-5">Get started</div>
+      <div className="w-[640px] flex items-center justify-center bg-userContent min-h-screen">
+        <div>
+          <div className="text-xl font-medium mb-5">Get started</div>
 
-        <Button variant={Variant.Primary} size={Size.Large} className="font-bold" onClick={handleRegister}>
-          Continue with Google
-        </Button>
+          <Button variant={Variant.Primary} size={Size.Large} className="font-bold" block>
+            Continue with Google
+          </Button>
 
-        <div className="flex justify-between items-center my-3">
-          <hr className="w-28" />
-          or
-          <hr className="w-28" />
+          <div className="flex justify-between items-center my-3">
+            <hr className="w-28" />
+            or
+            <hr className="w-28" />
+          </div>
+
+          <Button
+            variant={Variant.PrimaryOutline}
+            size={Size.Large}
+            className="font-bold"
+            block
+            onClick={() => navigate('/auth/signup/create-account')}
+          >
+            Sign up with email
+          </Button>
         </div>
-
-        <Button
-          variant={Variant.PrimaryOutline}
-          size={Size.Large}
-          className="font-bold"
-          onClick={handleSignUpWithEmail}
-        >
-          Sign up with email
-        </Button>
       </div>
     </AuthLayout>
   )

@@ -1,20 +1,25 @@
 import { FC, useState } from 'react'
 import { CiSearch } from 'react-icons/ci'
 import { AiOutlineAppstore, AiOutlineMenu } from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom'
 import Button from '@/components/Button'
 import ToggleButton from '@/components/ToggleButton'
 import ListView from './components/ListView'
 import CardView from './components/CardView'
 
 const Content: FC = () => {
+  const navigate = useNavigate()
   const [viewMode, SetViewMode] = useState<'list' | 'card'>('list')
 
   return (
-    <div className="w-[975px] bg-white pt-14 px-20 h-screen">
+    <div className="w-[975px] bg-userContent pt-14 px-20 h-screen overflow-y-scroll">
       <div className="flex items-center justify-between">
         <div className="font-bold text-3xl">Good Morning, Alonso</div>
-        <Button className="text-center w-[250px] h-10 bg-hover">
-          <div>+ Create New Report</div>
+        <Button
+          className="text-center w-[250px] h-10 bg-hover"
+          onClick={() => navigate('/user/my-reports/create-report')}
+        >
+          + Create New Report
         </Button>
       </div>
       <div className="flex justify-between my-9">
@@ -30,7 +35,8 @@ const Content: FC = () => {
           </div>
         </div>
       </div>
-      <div>{viewMode === 'list' ? <ListView /> : <CardView />}</div>
+
+      {viewMode === 'list' ? <ListView /> : <CardView />}
     </div>
   )
 }
