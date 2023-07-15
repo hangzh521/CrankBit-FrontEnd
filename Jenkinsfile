@@ -66,12 +66,12 @@ pipeline {
                         }
                         
                         sh "aws cloudfront create-invalidation --distribution-id '${env."${currentBranch}_distribution_id"}' --paths '${PATHS_TO_INVALIDATE}'"
+                        }
                     }
                 }
             }
         }
     }
-}
 
     post {
         failure {
