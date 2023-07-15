@@ -52,7 +52,7 @@ pipeline {
 
         stage('Deploy') {
                 environment {
-                    dev_distribution_id = 'E1ZJ848YXF6ROD'
+                    main_distribution_id = 'E1ZJ848YXF6ROD'
                     uat_distribution_id = 'E39W69KPRVB0O3'
                     prod_distribution_id = 'E2F97VQMQD24FA'
                     PATHS_TO_INVALIDATE = '/*'
